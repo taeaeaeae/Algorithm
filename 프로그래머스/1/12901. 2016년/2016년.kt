@@ -2,14 +2,13 @@ class Solution {
     fun solution(a: Int, b: Int): String {
         var answer = ""
         val w = listOf("SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT")
-        var mon = (a-1)*30
+        var mon = (a)*61
         
-        if(a >= 11 ) mon +=2
-        else if(a==4||a==5||a==2) mon +=5
-        else if(a == 7 || a==6 ) mon +=6
-        else if(a == 8) 
-        else if(a == 1 || a==3) mon +=4
-        else mon +=1
+        if(a == 4 ) mon +=5
+        else if(a==7|| a ==10 || a==2) mon +=4
+        else if(a == 1  || a == 12) mon +=6
+        else if(a%3==0) mon
+        else mon +=2
         return w[(mon+b)%7]
     }
 }
